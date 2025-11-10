@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["niri/workspaces"],
   "modules-center": ["niri/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["tray", "network", "pulseaudio", "battery", "clock"],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
