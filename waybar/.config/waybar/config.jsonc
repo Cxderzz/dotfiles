@@ -2,10 +2,21 @@
   "position": "top",
   "modules-left": ["niri/workspaces"],
   "modules-center": ["niri/window"],
-  "modules-right": ["tray", "network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["tray", "network", "group/audio", "battery", "clock"],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "group/audio":{
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
   },
   "battery": {
     "states": {
@@ -29,12 +40,17 @@
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
     "tooltip-format-wifi": "Signal Strength: {signalStrength}%"
   },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
   "pulseaudio": {
       "format": "{icon}  {volume}%",
       "format-muted": "",
       "format-icons": {
           "default": ["", "", " "]
       },
-      "on-click": "pavucontrol"
+      "on-click": "sh -c 'killall mixxc || mixxc --anchor top --anchor right --margin 10 --margin 15'"
   }
 }

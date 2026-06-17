@@ -125,3 +125,32 @@ button:hover {
     padding-left: 6px;
     padding-right: 6px;
 }
+
+#pulseaudio-slider scale {
+    min-width: 120px;
+}
+
+#pulseaudio-slider trough {
+    min-width: 120px;
+    min-height: 6px;
+    background-color: @surface1;
+    border-radius: 8px;
+}
+
+#pulseaudio-slider highlight {
+    background-color: @blue;
+    border-radius: 8px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 12px;
+    min-height: 12px;
+    background-color: @text;
+    border-radius: 100%;
+    box-shadow: none;
+}
+
+#pulseaudio-slider {
+    padding-left: 10px;
+    padding-right: 10px;
+}
